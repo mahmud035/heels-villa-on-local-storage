@@ -25,7 +25,6 @@ const Cart = ({ cart, products, handleClearCart }) => {
           <IoTrashBin color="white" size={20} />
         </button>
       </div>
-
       {cart.map((product, index) => (
         <div key={index} className="cart-item">
           <img src={product.pairImage} alt="" />
@@ -37,11 +36,12 @@ const Cart = ({ cart, products, handleClearCart }) => {
           </div>
         </div>
       ))}
-
       <p>Buy one get one free</p>
       <button onClick={handleOffer} className="offer-button">
         Get One for me
       </button>
+
+      {/* {console.log(Object.keys(freeProduct))} */}
 
       {Object.keys(freeProduct).length !== 0 && (
         <div className="cart-item">
