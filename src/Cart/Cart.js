@@ -5,13 +5,13 @@ import { IoTrashBin } from 'react-icons/io5';
 const Cart = ({ cart, products, handleClearCart }) => {
   const [freeProduct, setFreeProduct] = useState({});
 
-  // console.log(products);
+  console.log(freeProduct);
   // const item = products[5];
   // console.log(item);
   const handleOffer = () => {
     const randomNumber = Math.floor(Math.random() * products.length);
     const item = products[randomNumber];
-    console.log(randomNumber, item);
+    setFreeProduct(item);
   };
   return (
     <div className="cart">
@@ -42,6 +42,18 @@ const Cart = ({ cart, products, handleClearCart }) => {
       <button onClick={handleOffer} className="offer-button">
         Get One for me
       </button>
+
+      {Object.keys(freeProduct).length !== 0 && (
+        <div className="cart-item">
+          <img src={freeProduct.pairImage} alt="" />
+          <div>
+            <p>
+              {freeProduct.name} {freeProduct.color}
+            </p>
+            <p>$ {freeProduct.price}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
