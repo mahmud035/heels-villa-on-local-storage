@@ -6,8 +6,6 @@ const Cart = ({ cart, products, handleClearCart }) => {
   const [offer, setOffer] = useState(false);
   const [freeProduct, setFreeProduct] = useState({});
 
-  console.log(offer);
-
   const handleOffer = () => {
     const randomNumber = Math.floor(Math.random() * products.length);
     const item = products[randomNumber];
@@ -17,6 +15,8 @@ const Cart = ({ cart, products, handleClearCart }) => {
   useEffect(() => {
     if (cart.length > 0) {
       setOffer(true);
+    } else {
+      setOffer(false);
     }
   }, [cart]);
 

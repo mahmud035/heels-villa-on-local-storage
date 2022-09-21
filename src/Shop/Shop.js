@@ -22,6 +22,7 @@ const Shop = () => {
 
   const handleClearCart = () => {
     console.log('Delete');
+    setCart([]);
   };
 
   return (
